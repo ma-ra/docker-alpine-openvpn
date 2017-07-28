@@ -6,7 +6,15 @@
   You do not need to put a file dh2048.pem, because it is created automatically
 * Build:
 
-      docker build -t mara88/docker-alpine-openvpn
+      docker build -t mara88/docker-alpine-openvpn .
 * Run:
 
       docker run --name=openvpn -h openvpn -d --privileged=true -p 1194:1194/udp mara88/docker-alpine-openvpn
+      
+* Show log:
+
+      docker logs openvpn
+      
+* Run shell into container
+
+      docker exec -it openvpn /bin/sh
