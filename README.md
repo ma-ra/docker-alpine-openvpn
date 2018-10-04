@@ -18,3 +18,10 @@
 * Run shell into container
 
       docker exec -it openvpn /bin/sh
+
+* Install as systemd service:
+
+      docker stop openvpn
+      cp docker.openvpn.service /etc/systemd/system/
+      systemctl enable docker.openvpn
+      systemctl start docker.openvpn
