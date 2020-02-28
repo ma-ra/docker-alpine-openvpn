@@ -1,7 +1,7 @@
 [Unit]
 Description=OpenVPN container
 Requires=docker.service
-After=docker.service
+After=docker.service docker.localbind.service docker.squid.service
 
 [Service]
 Restart=always
@@ -9,4 +9,4 @@ ExecStart=/usr/bin/docker start -a openvpn
 ExecStop=/usr/bin/docker stop -t 4 openvpn
 
 [Install]
-WantedBy=local.target
+WantedBy=multi-user.target
