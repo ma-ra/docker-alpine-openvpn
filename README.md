@@ -9,7 +9,11 @@
       docker build -t mara88/docker-alpine-openvpn .
 * Run:
 
-      docker run --name=openvpn -h openvpn -d --privileged=true --link squid:squid --link localbind:localbind -p 1194:1194/udp mara88/docker-alpine-openvpn
+      docker run --name=openvpn -h openvpn -d --privileged=true \
+        --link squid:squid \
+        --link localbind:localbind \
+        --link lemp:lemp \
+        -p 1194:1194/udp mara88/docker-alpine-openvpn
       
 * Show log:
 
